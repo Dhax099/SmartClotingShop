@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin Orders</title>
+  
+  <link rel="stylesheet" href="css/admin-orders.css">
+  <link rel="stylesheet" href="css/admin-sidebar.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  
+  <aside class="sidebar" id="adminSidebar">
+    <a href="admin-dashboard.html" class="logo">Smart<span> Clothing</span></a>
+    <div class="label">ADMIN CENTER</div>
+    <a href="admin-dashboard.html">📊 Dashboard</a>
+    <a href="admin-products.html">📦 Products</a>
+    <a href="admin-orders.html" class="active">🛒 Orders</a>
+    <a href="admin-content.html">🎨 OOTD & Vouchers</a>
+    <button class="logout" onclick="logout()">🚪 Logout</button>
+  </aside>
+  
+  
+  <div class="main">
+    <header class="topbar">
+      <button class="mobile-menu" type="button" onclick="mobileMenu()" aria-label="Toggle navigation menu" aria-controls="adminSidebar" aria-expanded="false">☰</button>
+      <h1>Orders</h1>
+      <div class="admin">
+        <div class="avatar" id="avatar">A</div>
+        <div class="admin-name" id="adminName">Admin</div>
+      </div>
+    </header>
+    <main class="container">
+    
+    <section class="hero">
+      
+      <small>ADMIN CENTER</small>
+      <h1>Order Management</h1>
+      <p>Search, filter and manage customer orders.</p>
+      
+    </section>
+    
+    
+    <section class="stats">
+      
+      <div class="stat">
+        
+        <div class="stat-icon">📦</div>
+        
+        <div class="stat-title">
+          TOTAL ORDERS
+        </div>
+        
+        <div class="stat-number" id="totalOrders">
+          0
+        </div>
+        
+      </div>
+      
+      
+      <div class="stat">
+        
+        <div class="stat-icon">⏳</div>
+        
+        <div class="stat-title">
+          PENDING
+        </div>
+        
+        <div class="stat-number" id="pendingOrders">
+          0
+        </div>
+        
+      </div>
+      
+      
+      <div class="stat">
+        
+        <div class="stat-icon">🚚</div>
+        
+        <div class="stat-title">
+          SHIPPED
+        </div>
+        
+        <div class="stat-number" id="shippedOrders">
+          0
+        </div>
+        
+      </div>
+      
+      
+      <div class="stat">
+        
+        <div class="stat-icon">💰</div>
+        
+        <div class="stat-title">
+          TOTAL SALES
+        </div>
+        
+        <div class="stat-number" id="totalSales">
+          ₱0
+        </div>
+        
+      </div>
+      
+    </section>
+    
+    
+    <div class="toolbar">
+      
+      <input type="text" class="search" id="search" placeholder="🔎 Search order ID, customer or phone...">
+      
+      <select class="filter" id="statusFilter">
+      
+        <option value="all">
+          All Orders
+        </option>
+        
+        <option value="pending">
+          Pending
+        </option>
+
+        <option value="processing">
+          Processing
+        </option>
+        
+        <option value="shipped">
+          Shipped
+        </option>
+        
+        <option value="delivered">
+          Delivered
+        </option>
+        
+        <option value="cancelled">
+          Cancelled
+        </option>
+        
+      </select>
+      
+    </div>
+    
+    
+    <div id="ordersContainer"></div>
+    
+    
+    </main>
+  </div>
+  
+  
+  <script src="js/admin-sidebar.js"></script>
+  
+  
+  <div class="modal" id="detailsModal">
+    
+    <div class="modal-box">
+      
+      <div class="modal-header">
+        
+        <div class="modal-title">
+          Order Details
+        </div>
+        
+        <button class="close" onclick="closeModal()">
+          ×
+        </button>
+        
+      </div>
+      
+      <div id="modalContent"></div>
+      
+      <button class="print-btn" onclick="window.print()">
+      
+        🖨️ Print Order
+        
+      </button>
+      
+    </div>
+    
+  </div>
+  
+  
+  <script src="js/admin-sidebar.js"></script>
+  <script src="js/admin-orders.js"></script>
+  
+</body>
+
+</html>

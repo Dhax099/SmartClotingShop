@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Add Product</title>
+  
+  <link rel="stylesheet" href="css/add-product.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+
+<body>
+  
+  
+  <header class="header">
+    
+    <div class="logo">
+      
+      Smart<span> Clothing</span>
+      
+    </div>
+    
+    
+    <button class="back" onclick="goProducts()">
+    
+      ← Products
+      
+    </button>
+    
+  </header>
+  
+  
+  
+  <div class="container">
+    
+    
+    <div id="formArea">
+      
+      
+      <div class="title">
+        
+        <h1>
+          Add New Product
+        </h1>
+        
+        <p>
+          Create a professional product listing.
+        </p>
+        
+      </div>
+      
+      
+      
+      <div class="form-layout">
+        
+        
+        <!-- IMAGE -->
+        
+        <div class="card">
+          
+          <h2>
+            📸 Product Image
+          </h2>
+          
+          
+          <label class="image-upload" for="imageInput">
+          
+          
+            <div class="upload-content" id="uploadContent">
+              
+              <div class="upload-icon">
+                📷
+              </div>
+              
+              <strong>
+                Choose Product Image
+              </strong>
+              
+              Click here to select an image
+              from your phone.
+              
+            </div>
+            
+            
+            <img id="imagePreview" alt="Preview">
+            
+            
+          </label>
+          
+          
+          <input type="file" id="imageInput" class="image-upload-input" accept="image/*" onchange="previewImage(event)">
+          
+          
+        </div>
+        
+        
+        
+        <!-- DETAILS -->
+        
+        <div class="card">
+          
+          <h2>
+            📦 Product Details
+          </h2>
+          
+          
+          <div class="form-group">
+            
+            <label>
+              Product Name
+            </label>
+            
+            <input type="text" id="productName" placeholder="Enter product name">
+            
+          </div>
+          
+          
+          
+          <div class="row">
+            
+            
+            <div class="form-group">
+              
+              <label>
+                Price (₱)
+              </label>
+              
+              <input type="number" id="productPrice" placeholder="0">
+              
+            </div>
+            
+            
+            <div class="form-group">
+              
+              <label>
+                Stock
+              </label>
+              
+              <input type="number" id="productStock" placeholder="0">
+              
+            </div>
+            
+          </div>
+          
+          
+          
+          <div class="form-group">
+            
+            <label>
+              Category
+            </label>
+            
+            <select id="productCategory">
+            
+              <option value="">
+                Select Category
+              </option>
+              
+              <option>
+                Fashion
+              </option>
+              
+              <option>
+                Electronics
+              </option>
+              
+              <option>
+                Home & Living
+              </option>
+              
+              <option>
+                Beauty
+              </option>
+              
+              <option>
+                Sports
+              </option>
+              
+              <option>
+                Accessories
+              </option>
+              
+              <option>
+                Other
+              </option>
+              
+            </select>
+            
+          </div>
+          
+          
+          
+          <div class="form-group">
+            
+            <label>
+              Description
+            </label>
+            
+            <textarea id="productDescription" placeholder="Describe your product..."></textarea>
+            
+          </div>
+          
+          
+          
+          <button class="submit-btn" onclick="saveProduct()">+ Publish Product</button>
+          
+          
+        </div>
+        
+        
+      </div>
+      
+    </div>
+    
+    
+    
+    <!-- SUCCESS -->
+    
+    <div class="success" id="successBox">
+      <div class="success-icon">🎉</div>
+      <h2>Product Published!</h2>
+      <p>Your product has been added to your shop.</p>
+      <button class="success-btn" onclick="goProducts()">View My Products </button>
+    </div>
+    
+  </div>
+  
+  
+  
+  <script src="js/add-product.js"></script>
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Smart Clothing Shop Online Ordering System</title>
+  
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  <nav class="navbar">
+
+    <button class="menu" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      MENU
+    </button>
+    
+    <a class="logo">
+      Smart<span> Clothing</span>
+    </a>
+    
+    <div class="navlinks">
+      
+      <a href="index.html">
+        Home
+      </a>
+      <a href="shop.html">
+        Shop
+      </a>
+      <a href="cart.html">
+        Cart
+      </a>
+      <a href="my-orders.html" hidden>
+        My Orders
+      </a>
+      <a href="login.html" data-auth-link>
+        Login
+      </a>
+    </div>
+    
+  </nav>
+  
+  
+  <section class="hero">
+    
+    <div class="hero-content">
+      
+      <div class="badge">
+        WELCOME TO SMART CLOTHING
+      </div>
+      
+      <h1>
+        Shop Smart.<br>
+        Live <span>Better.</span>
+      </h1>
+      
+      <p>
+        Discover quality clothing, great prices and a smooth shopping experience made for customers in the Philippines.
+      </p>
+      
+      <div class="hero-buttons">
+        
+        <a href="shop.html" class="btn primary">Shop Now →</a>
+</div>
+      
+    </div>
+    
+  </section>
+  
+  
+  <main class="container">
+    
+    
+    <section class="ootd-section" id="ootdSection">
+      <div class="ootd-header">
+        <div>
+          <small>STYLE INSPIRATION</small>
+          <h2>Outfit of the Month</h2>
+          <p>See how our products look when worn.</p>
+        </div>
+        <div class="slider-controls">
+          <button onclick="prevOOTD()">‹</button>
+          <button onclick="nextOOTD()">›</button>
+        </div>
+      </div>
+      <div class="ootd-slider" id="ootdSlider"></div>
+    </section>
+
+    <div class="ootd-modal" id="ootdModal" aria-hidden="true">
+      <div class="ootd-modal-backdrop" data-close-ootd-modal></div>
+      <section class="ootd-modal-panel" role="dialog" aria-modal="true" aria-labelledby="ootdModalTitle">
+        <button class="ootd-modal-close" type="button" aria-label="Close" data-close-ootd-modal>×</button>
+        <small>SHOP THE LOOK</small>
+        <h2 id="ootdModalTitle"></h2>
+        <div class="ootd-product-grid" id="ootdProductGrid"></div>
+        <p class="ootd-modal-message" id="ootdModalMessage" aria-live="polite"></p>
+        <div class="ootd-modal-actions">
+          <button class="btn primary" type="button" id="addOOTDToCart">Add outfit to cart</button>
+          <a class="btn secondary" href="cart.html" id="ootdCartLink">Go to cart / Checkout →</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="voucher-section" id="voucherSection">
+      <div class="section-title"><h2>Available Vouchers</h2></div>
+      <div class="voucher-grid" id="voucherGrid"></div>
+    </section>
+
+    <section class="section">
+      
+      <div class="section-title">
+        
+        <h2>Why Smart Clothing?</h2>
+        
+      </div>
+      
+      
+      <div class="features">
+        <div class="feature"> 
+          <div class="feature-icon">
+            🚚
+          </div>
+          
+          <h3>Fast Delivery</h3>
+          <p>Quick and reliable delivery to your doorstep.</p>
+          
+        </div>
+        
+        
+        <div class="feature">
+          <div class="feature-icon">
+            🔒
+          </div>
+          
+          <h3>Secure Checkout</h3>
+          <p>Your order and payment information stays protected.</p>
+          
+        </div>
+        
+        
+        <div class="feature">
+          <div class="feature-icon">
+            💎
+          </div>
+          
+          <h3>Quality Products</h3>
+          <p>Shop products selected with quality in mind.</p>
+          
+        </div>
+        
+        
+        <div class="feature">
+          <div class="feature-icon">
+            💬
+          </div>
+          
+          <h3>Customer Support</h3>
+          <p>We're here to help with your shopping experience.</p>
+          
+            </div>
+      
+    </section>
+    
+  </main>
+  
+  
+  <footer class="footer">Shop your best style here on smart clothing.</footer>
+  
+<script src="js/auth-nav.js"></script>
+<script src="js/home.js"></script>
+</body>
+
+</html>

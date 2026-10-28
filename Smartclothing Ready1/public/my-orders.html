@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>My Orders</title>
+  
+  <link rel="stylesheet" href="css/my-orders.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+
+<body>
+  
+  <nav class="navbar">
+    <button class="menu" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      ☰
+    </button>
+    
+    <a href="index.html" class="logo">Smart<span> Clothing</span> </a>
+    
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" data-requires-login hidden>Cart</a>
+      <a href="my-orders.html" class="active">My Orders</a>
+      <a href="login.html" data-auth-link>Login</a>
+    </div>
+  </nav>
+  
+  <main class="container">
+    
+    
+    <section class="hero">
+      <small>SMART CLOTHING ACCOUNT</small>
+      <h1>My Orders</h1>
+      <p>Track and view all of your orders here</p>
+    </section>
+    
+    
+    <div id="ordersContainer">
+      
+    </div>
+    
+    
+  </main>
+  
+  
+  <script src="js/auth-nav.js"></script>
+  <script src="js/my-orders.js"></script>
+  
+</body>
+
+</html>

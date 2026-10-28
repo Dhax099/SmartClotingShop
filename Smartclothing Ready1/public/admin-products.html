@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin Products</title>
+  
+  <link rel="stylesheet" href="css/admin-products.css">
+  <link rel="stylesheet" href="css/admin-sidebar.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  
+  <!-- SIDEBAR -->
+  
+  <aside class="sidebar" id="adminSidebar">
+    
+    <a href="admin-dashboard.html" class="logo">
+      Smart<span> Clothing</span>
+    </a>
+    
+    <div class="label">
+      ADMIN CENTER
+    </div>
+    
+    <a href="admin-dashboard.html">
+      📊 Dashboard
+    </a>
+    
+    <a href="admin-products.html" class="active">
+      📦 Products
+    </a>
+    
+    <a href="admin-orders.html">
+      🛒 Orders
+    </a>
+    
+    <a href="admin-content.html">🎨 OOTD & Vouchers</a>
+    
+    <button class="logout" onclick="logout()">
+      🚪 Logout
+    </button>
+    
+  </aside>
+  
+  
+  
+  <div class="main">
+    
+    
+    <header class="topbar">
+      
+      <button class="mobile-menu" type="button" onclick="mobileMenu()" aria-label="Toggle navigation menu" aria-controls="adminSidebar" aria-expanded="false">☰</button>
+      
+      <h1>Products</h1>
+
+      <div class="admin">
+        <div class="avatar" id="avatar">S</div>
+        
+        <div class="admin-name" id="adminName">
+          
+          Admin
+          
+        </div>
+        
+      </div>
+      
+    </header>
+    
+    
+    <main class="content">
+      
+      
+      <!-- HERO -->
+      
+      <section class="hero">
+        
+        <div>
+          
+          <small>
+            SMART CLOTHING ADMIN CENTER
+          </small>
+          
+          <h2>
+            Store Products
+          </h2>
+          
+          <p>
+            Add, edit and manage all your store products.
+          </p>
+          
+        </div>
+        
+        <button class="add-btn" onclick="openAddProduct()">
+        
+          ＋ Add Product
+          
+        </button>
+        
+      </section>
+      
+      
+      <!-- Steytus to -->
+      <section class="stats">
+        
+        <div class="stat">
+          
+          <div class="stat-icon">
+            📦
+          </div>
+          
+          <div class="stat-title">
+            TOTAL PRODUCTS
+          </div>
+          
+          <div class="stat-value" id="totalProducts">
+            
+            0
+            
+          </div>
+          
+        </div>
+        
+        
+        <div class="stat">
+          
+          <div class="stat-icon">
+            ✅
+          </div>
+          
+          <div class="stat-title">
+            IN STOCK
+          </div>
+          
+          <div class="stat-value" id="inStock">
+            
+            0
+            
+          </div>
+          
+        </div>
+        
+        
+        <div class="stat">
+          
+          <div class="stat-icon">
+            ⚠️
+          </div>
+          
+          <div class="stat-title">
+            LOW STOCK
+          </div>
+          
+          <div class="stat-value" id="lowStock">
+            
+            0
+            
+          </div>
+          
+        </div>
+        
+        
+        <div class="stat">
+          
+          <div class="stat-icon">
+            🚫
+          </div>
+          
+          <div class="stat-title">
+            OUT OF STOCK
+          </div>
+          
+          <div class="stat-value" id="outStock">
+            
+            0
+            
+          </div>
+          
+        </div>
+        
+      </section>
+      
+      
+      <!-- bar -->
+      
+      <div class="toolbar">
+        
+        <input type="text" id="search" class="search" placeholder="Search products...">
+        <select id="categoryFilter" class="category-filter">
+          <option value="all">
+            All Categories
+          </option>
+          
+          <option value="tops">Tops</option><option value="bottoms">Bottoms</option><option value="dresses">Dresses</option><option value="outerwear">Outerwear</option><option value="accessories">Accessories</option><option value="other">Other</option>
+        </select>
+      </div>
+      <div id="products" class="products">
+      </div>
+      
+      
+    </main>
+    
+  </div>
+  
+  
+  <!-- mod -->
+  
+  <div class="modal" id="productModal">
+    
+    <div class="modal-box">
+      
+      
+      <div class="modal-header">
+        
+        <div class="modal-title" id="modalTitle">
+          
+          Add Product
+          
+        </div>
+        
+        <button class="close" onclick="closeModal()">
+        
+          ✕
+          
+        </button>
+        
+      </div>
+      
+      
+      <form id="productForm">
+        
+        
+        <div class="form-group">
+          
+          <label>
+            PRODUCT NAME
+          </label>
+          
+          <input type="text" id="productName" required placeholder="Enter product name">
+          
+        </div>
+        
+        
+        <div class="form-group">
+          
+          <label>
+            DESCRIPTION
+          </label>
+          
+          <textarea id="productDescription" placeholder="Product description"></textarea>
+          
+        </div>
+        
+        
+        <div class="form-row">
+          
+          
+          <div class="form-group">
+            
+            <label>
+              PRICE (₱)
+            </label>
+            
+            <input type="number" id="productPrice" min="0" required placeholder="0">
+            
+          </div>
+          
+          
+          <div class="form-group">
+            
+            <label>
+              STOCK
+            </label>
+            
+            <input type="number" id="productStock" min="0" required placeholder="0">
+            
+          </div>
+          
+          
+        </div>
+        
+        
+        <div class="form-row">
+          
+          
+          <div class="form-group">
+            
+            <label>
+              CATEGORY
+            </label>
+            
+            <select id="productCategory">
+            
+              <option value="tops">Tops</option><option value="bottoms">Bottoms</option><option value="dresses">Dresses</option><option value="outerwear">Outerwear</option><option value="accessories">Accessories</option><option value="other">Other</option>
+              
+            </select>
+            
+          </div>
+          
+          
+          <div class="form-group">
+            
+            <label>
+              IMAGE URL
+            </label>
+            
+            <input type="text" id="productImage" placeholder="https://...">
+            
+          </div>
+          
+          
+        </div>
+        
+        
+        <div class="form-group">
+          
+          <label>
+            IMAGE PREVIEW / LOCAL IMAGE
+          </label>
+          
+          <input type="file" id="imageFile" accept="image/*">
+          
+        </div>
+        
+        
+        <button type="submit" class="save-btn">
+        
+          Save Product
+          
+        </button>
+        
+        
+      </form>
+      
+    </div>
+    
+  </div>
+  
+  
+  <script src="js/admin-sidebar.js"></script>
+  <script src="js/admin-products.js"></script>
+  
+</body>
+
+</html>

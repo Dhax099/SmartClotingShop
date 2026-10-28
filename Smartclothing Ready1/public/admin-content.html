@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Store Content</title>
+        <link rel="stylesheet" href="css/admin-content.css">
+        <link rel="stylesheet" href="css/admin-sidebar.css">
+        <link rel="stylesheet" href="css/monochrome-theme.css">
+    <script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+    <body>
+
+        <aside class="sidebar" id="adminSidebar">
+            <a href="admin-dashboard.html" class="logo">Smart<span> Clothing</span></a>
+            <div class="label">ADMIN CENTER</div>
+            <a href="admin-dashboard.html">📊 Dashboard</a>
+            <a href="admin-products.html">📦 Products</a>
+            <a href="admin-orders.html">🛒 Orders</a>
+            <a href="admin-content.html" class="active">🎨 OOTM &amp; Vouchers</a>
+            <button class="logout" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+<div class="main">
+    <header class="topbar">
+        <button class="mobile-menu" type="button" onclick="mobileMenu()" aria-label="Toggle navigation menu" aria-controls="adminSidebar" aria-expanded="false">☰</button>
+        <h1>OOTM &amp; Vouchers</h1>
+        <div class="admin">
+            <div class="avatar" id="avatar">A</div>
+            <div class="admin-name" id="adminName">Admin</div>
+        </div>
+    </header>
+<main class="container">
+
+<section class="hero">
+
+    <small>ADMIN CENTER</small>
+    <h1>Store Content</h1>
+    <p>Control the customer homepage, OOTM slider and vouchers.</p>
+
+</section>
+
+<section class="grid">
+    
+<div class="card">
+    <h2>📸 Add OOTM Slide</h2>
+    <form id="ootdForm">
+        <input id="ootdTitle" placeholder="OOTM title" required>
+        <textarea id="ootdDescription" placeholder="Description" required></textarea>
+        <label class="product-options-label" for="ootdProductOptions">Select the products worn in this look</label>
+        <div id="ootdProductOptions" class="product-options"></div>
+        <input id="ootdImage" type="file" accept="image/*" required>
+        <button>Add OOTM</button>
+    </form>
+</div>
+<div class="card">
+    <h2>🎟️ Add Voucher</h2>
+    <form id="voucherForm">
+        <input id="voucherCode" placeholder="Voucher code (e.g. SAVE100)" required>
+        <input id="voucherDiscount" placeholder="Discount (e.g. ₱100 OFF or 10% OFF)" required>
+        <textarea id="voucherDescription" placeholder="Voucher description" required></textarea>
+        <label class="product-options-label" for="voucherExpiry">Expiration date</label>
+        <input id="voucherExpiry" type="date" required>
+        <button>Add Voucher</button>
+    </form>
+</div>
+
+</section>
+
+<section class="card">
+    <h2>Current OOTM Slides</h2>
+    <div id="ootdList" class="list">
+
+    </div>
+</section>
+<section class="card">
+    <h2>Current Vouchers</h2>
+    <div id="voucherList" class="list">
+
+    </div>
+</section>
+    </main>
+</div>
+<script src="js/admin-sidebar.js"></script>
+<script src="js/admin-content.js">
+
+</script>
+</body>
+</html>

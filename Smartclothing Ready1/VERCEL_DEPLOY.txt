@@ -1,0 +1,42 @@
+SmartClo - Vercel deployment + custom domain
+============================================
+
+This is a Flask + MySQL app, so it needs Vercel (or similar). GitHub Pages cannot run it.
+app.py and requirements.txt are at the repository ROOT - keep it that way.
+
+1. PUT THE FILES ON GITHUB (at the repo root, not inside a sub-folder)
+   Upload the CONTENTS of this folder to the repository. Never upload settings.env or
+   secret_key.txt (.gitignore skips them when you use git).
+
+2. HOSTED MYSQL DATABASE
+   XAMPP/localhost is not reachable from Vercel. Create a free MySQL-compatible database
+   (for example TiDB Cloud Serverless), then import smartclo.sql into it.
+
+3. DEPLOY ON VERCEL
+   Add New > Project > import the GitHub repo. Leave Root Directory empty and let Vercel
+   detect Flask. Do not set public/ as the Output Directory.
+
+4. ENVIRONMENT VARIABLES (Project Settings > Environment Variables, then Redeploy)
+     DB_HOST      hostname from your database provider
+     DB_PORT      4000 for TiDB Cloud, otherwise usually 3306
+     DB_NAME      database name (smartclo if you kept the default)
+     DB_USER      database username
+     DB_PASS      database password
+     DB_SSL       1      (needed by hosted MySQL providers)
+     SECRET_KEY   a long random value (required - Vercel cannot keep secret_key.txt,
+                  and without it everyone is logged out randomly)
+   Optional, for password-reset emails:
+     SMTP_HOST=smtp.gmail.com  SMTP_PORT=587  SMTP_USER  SMTP_PASSWORD (Google App Password)
+
+5. CUSTOM DOMAIN
+   Vercel project > Settings > Domains > Add your domain. Copy the DNS records Vercel shows
+   (usually an A record for the root domain and a CNAME for www) into your domain registrar.
+   HTTPS is set up automatically.
+
+6. AFTER FIRST DEPLOY
+   Log in as admin@smartclothing.com / admin123 and CHANGE THAT PASSWORD immediately -
+   the default is public in the SQL file and README.
+
+SECURITY
+   Any password that was ever uploaded to GitHub must be treated as leaked: revoke the Gmail
+   App Password at https://myaccount.google.com/apppasswords and create a new one.

@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+	--theme-bg: #f4efe9;
+	--theme-panel: #f6f0ea;
+	--theme-card: #fffefb;
+	--theme-soft: #efe4d7;
+	--theme-text: #2b231d;
+	--theme-muted: #6e625d;
+	--theme-accent: #8d6a4a;
+	--theme-accent-2: #5b4233;
+	--theme-line: #e5d8ca;
+	--theme-button: #5c4739;
+	--theme-button-text: #fefaf6;
+	--theme-shadow: rgba(66, 49, 38, 0.10);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--theme-bg) !important;
+	color: var(--theme-text) !important;
+}
+
+* {
+	font-family: 'Inter', Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.logo,
+.hero h1,
+.section-title h2,
+.ootd-info h3,
+.ootd-header h2,
+.hero .badge,
+.banner h2,
+.title,
+.order-id,
+.success h2 {
+	font-family: 'Cormorant Garamond', Georgia, serif !important;
+	letter-spacing: -0.03em !important;
+}
+
+.navbar,
+.card,
+.feature,
+.banner,
+.ootd-section,
+.voucher-card,
+.success-box,
+.empty,
+.payment-box,
+.order-card,
+.form-group input,
+.form-group textarea,
+.form-group select,
+.item-image,
+.order-item,
+.summary-row,
+.product-card,
+.product-info,
+.control-panel,
+.admin-alert,
+.table-wrap,
+.admin-card,
+.login-card,
+.register-card,
+.account-box,
+.auth-card,
+.sidebar,
+.content-box,
+.order-panel {
+	background: var(--theme-card) !important;
+	border-color: var(--theme-line) !important;
+	box-shadow: 0 6px 16px var(--theme-shadow) !important;
+}
+
+.navbar {
+	background: rgba(244, 239, 233, 0.96) !important;
+	border-bottom: 1px solid var(--theme-line) !important;
+}
+
+.logo,
+.navbar a,
+.navlinks a,
+.back,
+.footer a,
+.footer {
+	color: var(--theme-text) !important;
+}
+
+.logo span,
+.hero h1 span,
+.total strong,
+.product-price,
+.item-price,
+.price,
+.amount,
+.payment-name,
+.order-header strong {
+	color: var(--theme-accent) !important;
+}
+
+.navlinks a:hover,
+.navlinks a.active,
+.navlinks a:focus,
+.navbar a:hover {
+	color: var(--theme-accent-2) !important;
+}
+
+.hero {
+	background: linear-gradient(135deg, #f5efe8 0%, #e4d7c9 100%) !important;
+	color: var(--theme-text) !important;
+	border: 1px solid var(--theme-line) !important;
+	box-shadow: 0 10px 20px var(--theme-shadow) !important;
+}
+
+.hero .badge,
+.hero .btn,
+.primary,
+.place-btn,
+.success-btn,
+.shop-btn,
+.banner .btn,
+.submit-btn,
+button[type="submit"],
+.btn.primary {
+	background: var(--theme-button) !important;
+	color: var(--theme-button-text) !important;
+	border: 1px solid var(--theme-button) !important;
+}
+
+.hero p,
+.feature p,
+.banner p,
+.voucher-card p,
+.payment-description,
+.order-date,
+.product-quantity,
+.item-qty,
+.form-group label,
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.summary-row,
+.text-muted,
+.meta,
+.subtitle,
+small {
+	color: var(--theme-muted) !important;
+}
+
+.btn.secondary,
+button.secondary,
+.cancel-btn,
+.secondary-btn,
+.voucher-input button,
+.auth-button.secondary {
+	background: var(--theme-panel) !important;
+	color: var(--theme-text) !important;
+	border: 1px solid var(--theme-line) !important;
+}
+
+.feature,
+.voucher-card,
+.card,
+.container .section,
+.ootd-section,
+.admin-card,
+.account-box,
+.auth-card,
+.register-card,
+.login-card {
+	border-radius: 8px !important;
+}
+
+.feature h3,
+.title,
+.section-title h2,
+.ootd-info h3,
+.ootd-modal-panel h2,
+.hero h1,
+.banner h2 {
+	color: var(--theme-text) !important;
+}
+
+.footer {
+	background: var(--theme-accent-2) !important;
+	color: #f9f5f1 !important;
+	letter-spacing: 0.03em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+	border-color: var(--theme-accent) !important;
+	box-shadow: 0 0 0 3px rgba(141, 106, 74, 0.12) !important;
+}
+
+.payment-option:hover,
+.feature:hover,
+.voucher-card:hover,
+.product-card:hover,
+.order-card:hover {
+	border-color: var(--theme-accent) !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+	--theme-bg: #f4efe9;
+	--theme-panel: #f6f0ea;
+	--theme-card: #fffefb;
+	--theme-soft: #efe4d7;
+	--theme-text: #2b231d;
+	--theme-muted: #6e625d;
+	--theme-accent: #8d6a4a;
+	--theme-accent-2: #5b4233;
+	--theme-line: #e5d8ca;
+	--theme-button: #5c4739;
+	--theme-button-text: #fefaf6;
+	--theme-shadow: rgba(66, 49, 38, 0.10);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--theme-bg) !important;
+	color: var(--theme-text) !important;
+}
+
+* {
+	font-family: 'Inter', Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.logo,
+.hero h1,
+.section-title h2,
+.ootd-info h3,
+.ootd-header h2,
+.hero .badge,
+.banner h2,
+.title,
+.order-id,
+.success h2 {
+	font-family: 'Cormorant Garamond', Georgia, serif !important;
+	letter-spacing: -0.03em !important;
+}
+
+.navbar,
+.card,
+.feature,
+.banner,
+.ootd-section,
+.voucher-card,
+.success-box,
+.empty,
+.payment-box,
+.order-card,
+.form-group input,
+.form-group textarea,
+.form-group select,
+.item-image,
+.order-item,
+.summary-row,
+.product-card,
+.product-info,
+.control-panel,
+.admin-alert,
+.table-wrap,
+.admin-card,
+.login-card,
+.register-card,
+.account-box,
+.auth-card,
+.sidebar,
+.content-box,
+.order-panel {
+	background: var(--theme-card) !important;
+	border-color: var(--theme-line) !important;
+	box-shadow: 0 6px 16px var(--theme-shadow) !important;
+}
+
+.navbar {
+	background: rgba(244, 239, 233, 0.96) !important;
+	border-bottom: 1px solid var(--theme-line) !important;
+}
+
+.logo,
+.navbar a,
+.navlinks a,
+.back,
+.footer a,
+.footer {
+	color: var(--theme-text) !important;
+}
+
+.logo span,
+.hero h1 span,
+.total strong,
+.product-price,
+.item-price,
+.price,
+.amount,
+.payment-name,
+.order-header strong {
+	color: var(--theme-accent) !important;
+}
+
+.navlinks a:hover,
+.navlinks a.active,
+.navlinks a:focus,
+.navbar a:hover {
+	color: var(--theme-accent-2) !important;
+}
+
+.hero {
+	background: linear-gradient(135deg, #f5efe8 0%, #e4d7c9 100%) !important;
+	color: var(--theme-text) !important;
+	border: 1px solid var(--theme-line) !important;
+	box-shadow: 0 10px 20px var(--theme-shadow) !important;
+}
+
+.hero .badge,
+.hero .btn,
+.primary,
+.place-btn,
+.success-btn,
+.shop-btn,
+.banner .btn,
+.submit-btn,
+button[type="submit"],
+.btn.primary {
+	background: var(--theme-button) !important;
+	color: var(--theme-button-text) !important;
+	border: 1px solid var(--theme-button) !important;
+}
+
+.hero p,
+.feature p,
+.banner p,
+.voucher-card p,
+.payment-description,
+.order-date,
+.product-quantity,
+.item-qty,
+.form-group label,
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.summary-row,
+.text-muted,
+.meta,
+.subtitle,
+small {
+	color: var(--theme-muted) !important;
+}
+
+.btn.secondary,
+button.secondary,
+.cancel-btn,
+.secondary-btn,
+.voucher-input button,
+.auth-button.secondary {
+	background: var(--theme-panel) !important;
+	color: var(--theme-text) !important;
+	border: 1px solid var(--theme-line) !important;
+}
+
+.feature,
+.voucher-card,
+.card,
+.container .section,
+.ootd-section,
+.admin-card,
+.account-box,
+.auth-card,
+.register-card,
+.login-card {
+	border-radius: 8px !important;
+}
+
+.feature h3,
+.title,
+.section-title h2,
+.ootd-info h3,
+.ootd-modal-panel h2,
+.hero h1,
+.banner h2 {
+	color: var(--theme-text) !important;
+}
+
+.footer {
+	background: var(--theme-accent-2) !important;
+	color: #f9f5f1 !important;
+	letter-spacing: 0.03em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+	border-color: var(--theme-accent) !important;
+	box-shadow: 0 0 0 3px rgba(141, 106, 74, 0.12) !important;
+}
+
+.payment-option:hover,
+.feature:hover,
+.voucher-card:hover,
+.product-card:hover,
+.order-card:hover {
+	border-color: var(--theme-accent) !important;
+}

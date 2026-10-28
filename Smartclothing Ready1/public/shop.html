@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shop</title>
+  
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  <nav class="navbar">
+
+    <button class="menu" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      ☰
+    </button>
+    
+    <a href="index.html" class="logo">
+      Smart<span> Clothing</span>
+    </a>
+    
+    <div class="navlinks">
+      
+      <a href="index.html">
+        Home
+      </a>
+      
+      <a href="shop.html" class="active">
+        Shop
+      </a>
+      
+      <a href="cart.html" class="cart-link" data-requires-login hidden>
+        Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      
+      <a href="my-orders.html" hidden>
+        My Orders
+      </a>
+      
+      <a href="login.html" data-auth-link>
+        Login
+      </a>
+      
+    </div>
+    
+  </nav>
+  
+  
+  <main class="container">
+    
+    <section class="shop-hero">
+      
+      <small>
+        SMART CLOTHING COLLECTION
+      </small>
+      
+      <h1>
+        Wear It. Love It.
+      </h1>
+      
+      <p>
+        Discover our latest clothing collection and everyday styles.
+      </p>
+      
+    </section>
+    
+    
+    <div class="toolbar">
+      
+      <div class="search-box">
+        
+        <span class="search-icon">🔎</span>
+        
+        <input type="text" id="search" placeholder="Search products...">
+        
+      </div>
+      
+
+      
+    </div>
+    
+    
+    <section class="products-grid" id="productsGrid">
+    </section>
+    
+  </main>
+  
+  
+  <div class="toast" id="toast">
+    Product added to cart
+  </div>
+  
+  
+  <script src="js/auth-nav.js"></script>
+  <script src="js/shop.js"></script>
+  
+</body>
+
+</html>

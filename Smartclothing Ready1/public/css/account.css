@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+header {
+  background: white;
+  padding: 15px 5%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  color: #ff5a00;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 12px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.profile {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.profile h1 {
+  margin-bottom: 10px;
+}
+
+.profile p {
+  color: #666;
+}
+
+.orders {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.orders h2 {
+  margin-bottom: 20px;
+}
+
+.order {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 15px;
+}
+
+.order-id {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.order-date {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.status {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.empty {
+  text-align: center;
+  color: #fffdfd;
+  padding: 30px;
+}
+
+.shop-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #000000;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+}

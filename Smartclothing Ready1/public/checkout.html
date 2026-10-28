@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Checkout</title>
+  
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  
+  <nav class="navbar">
+
+    <button class="menu" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      ☰
+    </button>
+    
+    <a href="index.html" class="logo">
+      Smart<span> Clothing</span>
+    </a>
+    
+    <div class="navlinks">
+      
+      <a href="index.html">Home</a>
+      
+      <a href="shop.html">Shop</a>
+      
+      <a href="cart.html" data-requires-login hidden>Cart</a>
+      
+      <a href="my-orders.html" hidden>My Orders</a>
+
+      <a href="login.html" data-auth-link>Login</a>
+      
+    </div>
+    
+  </nav>
+  
+  
+  <main class="container">
+    
+    
+    <section class="hero">
+      
+      <small>SMART CLOTHING CHECKOUT</small>
+      
+      <h1>Complete Your Order</h1>
+      
+      <p>
+        Enter your delivery information and choose your preferred payment method.
+      </p>
+      
+    </section>
+    
+    
+    <div id="checkoutArea">
+      
+      <div class="checkout-grid">
+        
+        
+        <!-- CUSTOMER INFORMATION -->
+        
+        <section class="card">
+          
+          <div class="title">
+            Delivery Information
+          </div>
+          
+          <form id="checkoutForm">
+            
+            <div class="row">
+              
+              <div class="form-group">
+                
+                <label>FULL NAME</label>
+                
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                
+              </div>
+              
+              
+              <div class="form-group">
+                
+                <label>PHONE NUMBER</label>
+                
+                <input type="tel" id="phone" placeholder="09XXXXXXXXX or +639XXXXXXXXX" required>
+                
+              </div>
+              
+            </div>
+            
+            
+            <div class="form-group">
+              
+              <label>EMAIL ADDRESS</label>
+              
+              <input type="email" id="email" placeholder="you@example.com">
+              
+            </div>
+            
+            
+            <div class="form-group">
+              <label>PROVINCE / CITY</label>
+              <select id="city" required>
+                <option value="">Select your Philippine city/province</option>
+                <option>Manila</option><option>Quezon City</option><option>Makati</option><option>Pasig</option><option>Taguig</option><option>Pasay</option><option>Caloocan</option><option>Parañaque</option><option>Las Piñas</option><option>Muntinlupa</option><option>Marikina</option><option>Valenzuela</option><option>Antipolo</option><option>Cebu City</option><option>Davao City</option><option>Cagayan de Oro</option><option>Zamboanga City</option><option>General Santos</option><option>Iloilo City</option><option>Bacolod</option><option>Angeles City</option><option>Baguio</option><option>Batangas</option><option>Laguna</option><option>Cavite</option><option>Rizal</option><option>Bulacan</option><option>Pampanga</option><option>Palawan</option><option>Negros Occidental</option><option>Negros Oriental</option><option>Bohol</option><option>Misamis Oriental</option><option>Other Philippine Location</option>
+              </select>
+            </div>
+            
+            
+            <div class="form-group">
+              
+              <label>FULL DELIVERY ADDRESS</label>
+              
+              <textarea id="address" placeholder="House, road, area, thana, landmark..." required></textarea>
+              
+            </div>
+            
+            
+            <div class="payment-box">
+              
+              <div class="title">
+                Payment Method
+              </div>
+              
+              
+              <label class="payment-option">
+              
+                <input type="radio" name="payment" value="Cash on Delivery" checked>
+                
+                <div>
+                  
+                  <div class="payment-name">
+                    💵 Cash on Delivery
+                  </div>
+                  
+                  <div class="payment-description">
+                    Pay when your order arrives.
+                  </div>
+                  
+                </div>
+                
+              </label>
+              
+            </div>
+            
+            
+            <button type="submit" class="place-btn">
+              Place Order ✓
+            </button>
+            
+          </form>
+          
+        </section>
+        
+        
+        <!-- ORDER SUMMARY -->
+        
+        <aside class="card">
+          
+          <div class="title">
+            Your Order
+          </div>
+          
+          <div id="orderItems"></div>
+          
+          <div class="voucher-box">
+            <label>VOUCHER CODE</label>
+            <div class="voucher-input"><input id="voucherCode" placeholder="Enter voucher code"><button type="button" onclick="applyVoucher()">Apply</button></div>
+            <div id="voucherMessage"></div>
+          </div>
+          <div id="summary"></div>
+          
+          <a href="cart.html" class="back" data-requires-login hidden>
+            ← Back to Cart
+          </a>
+          
+        </aside>
+        
+        
+      </div>
+      
+    </div>
+    
+  </main>
+  
+  
+  <!-- SUCCESS -->
+  
+  <div class="success" id="successModal">
+    
+    <div class="success-box">
+      
+      <div class="success-icon">
+        ✓
+      </div>
+      
+      <h2>
+        Order Placed!
+      </h2>
+      
+      <p>
+        <span id="successMessage">Your order has been successfully placed.</span>
+      </p>
+      
+      <div class="order-number" id="orderNumber">
+      </div>
+      
+      <a href="my-orders.html" class="success-btn">
+        View My Orders
+      </a>
+      
+    </div>
+    
+  </div>
+
+  <script src="js/auth-nav.js"></script>
+  <script src="js/checkout.js"></script>
+  
+</body>
+
+</html>

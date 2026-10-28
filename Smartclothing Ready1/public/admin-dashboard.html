@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin Dashboard</title>
+  
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+  <link rel="stylesheet" href="css/admin-sidebar.css">
+  <link rel="stylesheet" href="css/monochrome-theme.css">
+  
+<script src="api/hydrate.js"></script>
+  <script src="js/db.js"></script>
+</head>
+
+<body>
+  
+  
+  <aside class="sidebar" id="adminSidebar">
+    <a href="admin-dashboard.html" class="logo">Smart<span> Clothing</span></a>
+    <div class="label">ADMIN CENTER</div>
+    <a href="admin-dashboard.html" class="active">📊 Dashboard</a>
+    <a href="admin-products.html">📦 Products</a>
+    <a href="admin-orders.html">🛒 Orders</a>
+    <a href="admin-content.html">🎨 OOTM & Vouchers</a>
+    <button class="logout" onclick="logout()">🚪 Logout</button>
+  </aside>
+  
+  
+  <div class="main">
+    <header class="topbar">
+      <button class="mobile-menu" type="button" onclick="mobileMenu()" aria-label="Toggle navigation menu" aria-controls="adminSidebar" aria-expanded="false">☰</button>
+      <h1>Dashboard</h1>
+      <div class="admin">
+        <div class="avatar" id="avatar">A</div>
+        <div class="admin-name" id="adminName">Admin</div>
+      </div>
+    </header>
+    <main class="container">
+    
+    
+    <section class="hero">
+      
+      <small>ADMIN CENTER</small>
+      <h1>Welcome to Admin Dashboard</h1>
+      <p>Manage your products, orders and sales from one place.</p>
+      
+    </section>
+    
+    
+    <!-- Stats -->
+    <section class="stats">
+      
+      <div class="stat">
+        <div class="stat-icon">📦</div>
+        <div class="stat-title">TOTAL PRODUCTS</div>
+        <div class="stat-number" id="totalProducts">0</div>
+        <div class="stat-change">Active products</div>
+      </div>
+      
+      <div class="stat">
+        <div class="stat-icon">🧾</div>
+        <div class="stat-title">TOTAL ORDERS</div>
+        <div class="stat-number" id="totalOrders">0</div>
+        <div class="stat-change">All customer orders</div>
+      </div>
+      
+      
+      <div class="stat">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-title">PENDING ORDERS</div>
+        <div class="stat-number" id="pendingOrders">0</div>
+        <div class="stat-change">Need attention</div>
+      </div>
+      
+      
+      <div class="stat">
+        <div class="stat-icon">💰</div>
+        <div class="stat-title">TOTAL SALES</div>
+        <div class="stat-number" id="totalSales">₱0</div>
+        <div class="stat-change">Store revenue</div>
+      </div>
+      
+      
+    </section>
+    
+    
+    <!-- ================= quick action bar ================= -->
+    
+    <div class="section-heading">
+      <h2>Quick Actions</h2>
+    </div>
+    
+    <section class="actions">
+      
+      <a href="admin-products.html" class="action">
+        <div class="action-icon">➕</div>
+        <h3>Add / Manage Products</h3>
+        <p>Manage your product catalog</p>
+      </a>
+      
+      
+      <a href="admin-orders.html" class="action">
+        <div class="action-icon">📦</div>
+        <h3>Manage Orders</h3>
+        <p>View and update orders</p>
+      </a>
+      
+      
+      <a href="admin-content.html" class="action">
+        <div class="action-icon">🎨</div>
+        <h3>OOTM & Vouchers</h3>
+        <p>Manage homepage outfits and discount vouchers</p>
+      </a>
+
+    </section>
+    
+    <section class="main-grid">
+      
+      
+      <!-- recent order status -->
+      
+      <div class="card">
+        
+        <div class="card-header">
+          
+          <h2>
+            Recent Orders
+          </h2>
+          
+          <a href="admin-orders.html">
+            View All
+          </a>
+          
+        </div>
+        
+        
+        <div id="recentOrders">
+          
+        </div>
+        
+      </div>
+      
+      
+      <!-- sales revenew or pag ano total ng benta potangina -->
+      
+      <div class="card">
+        
+        <div class="card-header">
+          
+          <h2>
+            Sales Overview
+          </h2>
+          
+        </div>
+        
+        
+        <div class="sales-box">
+          
+          <div class="sales-label">TOTAL STORE SALES</div>
+          
+          <div class="sales-total" id="salesOverview">
+            ₱0
+          </div>
+          
+          <div class="sales-note">
+            Live data from your orders
+          </div>
+          
+          
+          <div class="sales-bars">
+            
+            
+            <div class="bar-row">
+              
+              <div class="bar-top">
+                
+                <span>
+                  Delivered
+                </span>
+                
+                <span id="deliveredPercent">
+                  0%
+                </span>
+                
+              </div>
+              
+              <div class="bar">
+                
+                <div class="bar-fill" id="deliveredBar">
+                </div>
+                
+              </div>
+              
+            </div>
+            
+            
+            <div class="bar-row">
+              
+              <div class="bar-top">
+                
+                <span>
+                  Processing
+                </span>
+                
+                <span id="processingPercent">
+                  0%
+                </span>
+                
+              </div>
+              
+              <div class="bar">
+                
+                <div class="bar-fill" id="processingBar">
+                </div>
+                
+              </div>
+              
+            </div>
+            
+            
+            <div class="bar-row">
+              
+              <div class="bar-top">
+                
+                <span>
+                  Pending
+                </span>
+                
+                <span id="pendingPercent">
+                  0%
+                </span>
+                
+              </div>
+              
+              <div class="bar">
+                
+                <div class="bar-fill" id="pendingBar">
+                </div>
+                
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+    </section>
+    
+    
+    <div class="footer">
+      
+      Smart Clothing Admin Center • Dashboard
+      
+    </div>
+    
+    
+    </main>
+  </div>
+  
+  
+  <script src="js/admin-sidebar.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+  
+</body>
+
+</html>

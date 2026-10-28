@@ -1,0 +1,213 @@
+*{box-sizing:border-box;
+    font-family:Arial,sans-serif
+    }
+
+    body{margin:0;
+    background:#f6f7f9;
+    color:#171717}
+    
+    .navbar{
+        background:#fff;
+        border-bottom:1px solid #eee;
+        min-height:70px;padding:0 5%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px
+        }
+
+        .logo{
+            text-decoration:none;
+            color:#171717;
+            font-size:25px;
+            font-weight:900
+        }
+        
+        .logo span{
+            color:#0c0c0c
+        }
+        
+        .navbar a{
+            margin:0 8px;
+            text-decoration:none;
+            color:#555;
+            font-size:12px;
+            font-weight:700
+        }
+        
+        .navbar a.active{
+            color:#171717
+        }
+        
+        .navbar button{
+            border:0;
+            background:#171717;
+            color:#fff;
+            padding:10px 14px;
+            border-radius:8px;
+            cursor:pointer
+        }
+        
+        .container
+        {width:92%;
+            max-width:1150px;
+            margin:30px auto
+        }
+        
+        .hero{
+            background:#171717;
+            color:#fff;
+            border-radius:20px;
+            padding:30px;
+            margin-bottom:20px
+        }
+        
+        .hero small{
+            color:#171717;
+            font-weight:900;
+            letter-spacing:2px
+        }
+        
+        .hero h1{
+            font-size:35px;
+            margin:8px 0
+        }
+        
+        .hero p{
+            color:#bbb
+        }
+        
+        .grid{display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:18px
+        }
+        
+        .card{
+            background:#fff;
+            border:1px solid #e8e8e8;
+            border-radius:16px;
+            padding:20px;
+            margin-bottom:18px
+        }
+        
+        .card h2
+        {margin-top:0;
+            font-size:19px
+        }
+        
+        form{display:grid;
+            gap:11px
+        }
+        
+        input,textarea{width:100%;
+            padding:12px;
+            border:1px solid #ddd;
+            border-radius:9px;
+            font-size:13px
+        }
+        
+        textarea{min-height:80px;
+            resize:vertical
+        }
+
+        .product-options-label{
+            font-size:13px;
+            font-weight:700
+        }
+
+        .product-options{
+            display:grid;
+            gap:8px;
+            max-height:220px;
+            overflow:auto
+        }
+
+        .product-option{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            padding:10px;
+            border:1px solid #e8e8e8;
+            border-radius:9px;
+            cursor:pointer
+        }
+        .product-option input{
+            width:auto;
+            margin:0;
+            padding:0;
+            border:0;
+            flex:none
+        }
+        .product-option span{
+            font-size:13px;
+            font-weight:700
+        }
+        .product-option small{
+            display:block;
+            color:#777;
+            font-weight:400;
+            margin-top:4px
+        }
+
+        form button{
+            background:#171717;
+            color:#fff;
+            border:0;
+            padding:12px;
+            border-radius:9px;
+            font-weight:800;
+            cursor:pointer
+        }
+        
+        .item{display:flex;
+            gap:15px;
+            align-items:center;
+            border:1px solid #eee;
+            padding:12px;
+            border-radius:12px;
+            margin-top:10px
+        }
+        
+        .item img{width:85px;
+            height:85px;
+            object-fit:cover;
+            border-radius:9px
+        }
+        
+        .item .info{flex:1
+        }
+        
+        .item strong{display:block
+        }
+        
+        .item small{color:#777
+        }
+        
+        .delete{background:#171717;
+            color:#fff;
+            border:0;
+            padding:8px 11px;
+            border-radius:7px;
+            cursor:pointer
+        }
+        
+        @media(max-width:750px){
+            .grid{
+                grid-template-columns:1fr
+            }
+            
+            .navbar{
+                flex-wrap:wrap;
+                padding:12px 4%
+            }
+            
+            .navbar div{
+                width:100%;
+                overflow:auto;
+                white-space:nowrap
+            }
+            
+            .navbar a{
+                margin:0 5px
+            }
+        }
